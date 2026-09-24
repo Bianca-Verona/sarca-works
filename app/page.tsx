@@ -330,18 +330,23 @@ export default function Home() {
 
         const projetosFirebase: Projeto[] =
           snapshot.docs
-            .map((documento) => {
+            .map((documento): Projeto => {
               const dados = documento.data();
-
-              const status =
-                dados.status === "Publicado"
-                  ? "Publicado"
-                  : "Rascunho";
 
               const tamanhoValido =
                 dados.tamanho === "grande" ||
                 dados.tamanho === "media" ||
                 dados.tamanho === "pequena";
+
+              const statusValido: Projeto["status"] =
+                dados.status === "Publicado"
+                  ? "Publicado"
+                  : "Rascunho";
+
+              const tamanho: Projeto["tamanho"] =
+                tamanhoValido
+                  ? (dados.tamanho as Projeto["tamanho"])
+                  : "media";
 
               return {
                 id: documento.id,
@@ -366,7 +371,7 @@ export default function Home() {
                     ? dados.descricao
                     : "",
 
-                status,
+                status: statusValido,
 
                 url:
                   typeof dados.url === "string"
@@ -378,9 +383,7 @@ export default function Home() {
                     ? normalizarCapa(dados.capa)
                     : "",
 
-                tamanho: tamanhoValido
-                  ? dados.tamanho
-                  : "media",
+                tamanho,
               };
             })
             .filter(
