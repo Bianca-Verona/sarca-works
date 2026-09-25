@@ -13,9 +13,60 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SARÇA WORKS",
+  metadataBase: new URL("https://sarcaworks.com.br"),
+
+  title: {
+    default: "SARÇA WORKS | Estúdio Criativo",
+    template: "%s | SARÇA WORKS",
+  },
+
   description:
     "Design, digital e experiências interativas para ideias que merecem existir.",
+
+  keywords: [
+    "SARÇA WORKS",
+    "estúdio criativo",
+    "design",
+    "design digital",
+    "sites",
+    "convites interativos",
+    "identidade visual",
+    "experiências digitais",
+  ],
+
+  authors: [
+    {
+      name: "SARÇA WORKS",
+    },
+  ],
+
+  creator: "SARÇA WORKS",
+
+  icons: {
+    icon: "/sarça%20logo.png",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://sarcaworks.com.br",
+    siteName: "SARÇA WORKS",
+    title: "SARÇA WORKS | Estúdio Criativo",
+    description:
+      "Design, digital e experiências interativas para ideias que merecem existir.",
+  },
+
+  twitter: {
+    card: "summary",
+    title: "SARÇA WORKS | Estúdio Criativo",
+    description:
+      "Design, digital e experiências interativas para ideias que merecem existir.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
