@@ -54,13 +54,22 @@ export const metadata: Metadata = {
     title: "SARÇA WORKS | Estúdio Criativo",
     description:
       "Design, digital e experiências interativas para ideias que merecem existir.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SARÇA WORKS | Estúdio Criativo",
+      },
+    ],
   },
 
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "SARÇA WORKS | Estúdio Criativo",
     description:
       "Design, digital e experiências interativas para ideias que merecem existir.",
+    images: ["/og-image.png"],
   },
 
   robots: {
